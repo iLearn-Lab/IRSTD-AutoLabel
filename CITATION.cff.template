@@ -1,0 +1,13 @@
+# Rename this file to CITATION.cff after replacing every TODO value.
+cff-version: 1.2.0
+message: "If you use IRSTD-AutoLabel, please cite this software and the associated paper."
+title: "IRSTD-AutoLabel: Automatic Annotation and Visualization for Infrared Small Target Detection"
+type: software
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+version: "1.0.0"
+date-released: "TODO-YYYY-MM-DD"
+repository-code: "https://github.com/iLearn-Lab/IRSTD-AutoLabel"
+url: "https://github.com/iLearn-Lab/IRSTD-AutoLabel"
+license: Apache-2.0
