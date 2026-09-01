@@ -153,8 +153,8 @@ Software citation metadata will be added after the contributor list and archival
 
 If you use IRSTD-AutoLabel, please cite the associated papers:
 
-- [ADGNet](https://github.com/iLearn-Lab/MM26-ADGNet)
 - [DGNet](https://github.com/iLearn-Lab/MM26-DGNet)
+- [ADGNet](https://github.com/iLearn-Lab/MM26-ADGNet)
 - [HDNet](https://github.com/iLearn-Lab/TGRS25-HDNet)
 
 ```bibtex
