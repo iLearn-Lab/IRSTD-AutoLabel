@@ -188,3 +188,5 @@ IRSTD-AutoLabel is released under the [Apache License 2.0](LICENSE).
 ## Contributions and issues
 
 Bug reports and focused pull requests for the CLI are welcome through GitHub Issues. When reporting a problem, include the command, directory layout, Python/Pillow versions, and a minimal reproducible example. Please do not upload private datasets or unpublished model outputs.
+
+If you have any questions, please contact [yucl@mail.sdu.edu.cn](mailto:yucl@mail.sdu.edu.cn).
