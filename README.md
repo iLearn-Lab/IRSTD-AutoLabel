@@ -13,8 +13,8 @@ This public repository contains the local, batch-oriented CLI. It reads original
 
 For interactive annotation and browser-based visualization, use the IRSTD-AutoLabel web service:
 
-- **Official domain:** [http://irstd-autolabel.top/](http://irstd-autolabel.top/) — currently pending domain approval.
-- **Temporary access:** [http://47.94.139.242/](http://47.94.139.242/) — available while the official domain is under review.
+- **Official domain:** [http://irstd-autolabel.top/](http://irstd-autolabel.top/).
+- **Temporary access:** [http://47.94.139.242/](http://47.94.139.242/).
 
 The CLI and web service implement the same main workflow. The CLI is recommended for local data, reproducible experiments, and batch processing. If the hosted service becomes unavailable, we will reassess releasing the web implementation.
 
