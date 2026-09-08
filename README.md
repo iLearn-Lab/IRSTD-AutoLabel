@@ -14,10 +14,6 @@ IRSTD-AutoLabel brings automatic annotation and visualization to infrared small 
 
 See the workflows in action: manual annotation and automatic annotation with IRSTD-AutoLabel.
 
-<!-- Relative-path HTML video embeds require a compatible renderer.
-For GitHub README playback, use GitHub-uploaded video attachment URLs and
-verify the resulting players and layout in GitHub's Markdown preview. -->
-
 <table>
   <tr>
     <th width="50%" align="center">Manual annotation · 手工标注</th>
@@ -25,13 +21,13 @@ verify the resulting players and layout in GitHub's Markdown preview. -->
   </tr>
   <tr>
     <td width="50%" align="center" valign="top">
-      <video src="assets/humanlabel.mp4" controls preload="metadata" width="100%">
-        <a href="assets/humanlabel.mp4">Watch the manual annotation demo</a>
+      <video src="https://github.com/user-attachments/assets/8e4a7659-4e12-4e8d-901f-3ccafe18c019" controls preload="metadata" width="100%">
+        <a href="https://github.com/user-attachments/assets/8e4a7659-4e12-4e8d-901f-3ccafe18c019">Watch the manual annotation demo</a>
       </video>
     </td>
     <td width="50%" align="center" valign="top">
-      <video src="assets/autolable.mp4" controls preload="metadata" width="100%">
-        <a href="assets/autolable.mp4">Watch the automatic annotation demo</a>
+      <video src="https://github.com/user-attachments/assets/60b1c906-e9d1-4f89-8118-538090b443c7" controls preload="metadata" width="100%">
+        <a href="https://github.com/user-attachments/assets/60b1c906-e9d1-4f89-8118-538090b443c7">Watch the automatic annotation demo</a>
       </video>
     </td>
   </tr>
