@@ -12,6 +12,14 @@ IRSTD-AutoLabel brings automatic annotation and visualization to infrared small 
 
 ## Manual vs. automatic annotation
 
+> [!IMPORTANT]
+> **Reduce annotation time with IRSTD-AutoLabel.**
+>
+> - **Interactive web interface: 80% less manual annotation time.**
+> - **Batch CLI: 95% less time spent on annotation.**
+>
+> Compared with a fully manual annotation workflow.
+
 See the workflows in action: manual annotation and automatic annotation with IRSTD-AutoLabel.
 
 <table>
