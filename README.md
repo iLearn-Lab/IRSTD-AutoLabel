@@ -14,12 +14,28 @@ IRSTD-AutoLabel brings automatic annotation and visualization to infrared small 
 
 See the workflows in action: manual annotation and automatic annotation with IRSTD-AutoLabel.
 
-| Manual annotation · 手工标注 | IRSTD-AutoLabel · 自动化标注 |
-| :---: | :---: |
-| [**▶ Watch the manual annotation demo**](assets/humanlabel.mp4) | [**▶ Watch the automatic annotation demo**](assets/autolable.mp4) |
-| A walkthrough of the manual annotation process. | A walkthrough of our automatic annotation workflow. |
+<!-- Relative-path HTML video embeds require a compatible renderer.
+For GitHub README playback, use GitHub-uploaded video attachment URLs and
+verify the resulting players and layout in GitHub's Markdown preview. -->
 
-*The links above open the MP4 demo files. Download them for local playback if a preview is unavailable.*
+<table>
+  <tr>
+    <th width="50%" align="center">Manual annotation · 手工标注</th>
+    <th width="50%" align="center">IRSTD-AutoLabel · 自动化标注</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <video src="assets/humanlabel.mp4" controls preload="metadata" width="100%">
+        <a href="assets/humanlabel.mp4">Watch the manual annotation demo</a>
+      </video>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <video src="assets/autolable.mp4" controls preload="metadata" width="100%">
+        <a href="assets/autolable.mp4">Watch the automatic annotation demo</a>
+      </video>
+    </td>
+  </tr>
+</table>
 
 ## Overview
 
@@ -218,8 +234,7 @@ If you use IRSTD-AutoLabel, please cite the associated papers:
 - [ADGNet](https://github.com/iLearn-Lab/MM26-ADGNet)
 - [HDNet](https://github.com/iLearn-Lab/TGRS25-HDNet)
 
-<details>
-<summary><strong>BibTeX citations</strong></summary>
+### BibTeX citations
 
 ```bibtex
 @inproceedings{yu2026dgnet,
@@ -246,8 +261,6 @@ If you use IRSTD-AutoLabel, please cite the associated papers:
   doi     = {10.1109/TGRS.2025.3574962},
 }
 ```
-
-</details>
 
 For future papers that use the tool, we recommend mentioning both the repository and the hosted web service in the main text or implementation section, rather than only in a footnote. Once an archival DOI is available, cite the software DOI as well.
 
