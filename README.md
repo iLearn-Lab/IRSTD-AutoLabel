@@ -1,13 +1,43 @@
 # IRSTD-AutoLabel
 
-Automatic annotation, error analysis, and publication-ready visualization for infrared small target detection (IRSTD).
+**From infrared images and masks to annotations, error analysis, and publication-ready figures.**
 
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+IRSTD-AutoLabel brings automatic annotation and visualization to infrared small target detection (IRSTD), with an interactive web service and a local batch-processing CLI.
+
+[![License](https://img.shields.io/badge/license-Apache--2.0-red.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-%E2%89%A53.10-blue.svg)](https://www.python.org/)
+[![Web Demo](https://img.shields.io/badge/Web-Try%20the%20demo-00897B.svg)](http://irstd-autolabel.top/)
+
+**[Try online](http://irstd-autolabel.top/)** · **[Install the CLI](#installation)** · **[English guide](cli/README_EN.md)** · **[中文指南](cli/README.md)**
+
+## Manual vs. automatic annotation
+
+See the workflows in action: manual annotation and automatic annotation with IRSTD-AutoLabel.
+
+| Manual annotation · 手工标注 | IRSTD-AutoLabel · 自动化标注 |
+| :---: | :---: |
+| [**▶ Watch the manual annotation demo**](assets/humanlabel.mp4) | [**▶ Watch the automatic annotation demo**](assets/autolable.mp4) |
+| A walkthrough of the manual annotation process. | A walkthrough of our automatic annotation workflow. |
+
+*The links above open the MP4 demo files. Download them for local playback if a preview is unavailable.*
+
+## Overview
 
 This public repository contains the local, batch-oriented CLI. It reads original infrared images, ground-truth masks, and prediction masks; matches connected components; classifies detections; and exports visualizations and labels in several common formats.
 
 > **Scope:** only the CLI is open source at present. The hosted web interface remains available as a service, but its frontend and backend source code are not included in this repository.
+
+```text
+Infrared images + GT masks + prediction masks
+                      ↓
+        Component matching & A/B/C analysis
+                      ↓
+     PNG figures · COCO JSON · YOLO TXT · CSV
+```
+
+For GT-only annotation, provide original images and GT masks and use `--mode original`.
+
+**On this page:** [Web service](#online-web-service) · [Features](#features) · [Installation](#installation) · [Input layout](#input-layout) · [Usage](#usage) · [Outputs](#output-layout) · [Citation](#citation)
 
 ## Online web service
 
@@ -20,16 +50,22 @@ The CLI and web service implement the same main workflow. The CLI is recommended
 
 ## Features
 
-- Automatically detects standard and flat comparison-directory layouts.
-- Supports prediction analysis and GT-only annotation modes.
-- Classifies prediction results as:
-  - **A**: matched detection (true positive)
-  - **B**: unmatched prediction (false alarm)
-  - **C**: unmatched ground-truth target (miss)
-- Produces publication-oriented PNG visualizations with local zoom panels.
-- Exports COCO JSON, YOLO TXT, and summary CSV files.
-- Supports filtering by image stem, method, and prediction source.
-- Provides configurable thresholds, matching strategies, colors, resampling, brightness, and contrast.
+| Capability | What you can do |
+| --- | --- |
+| **Batch processing** | Automatically detect standard and flat comparison-directory layouts; filter by image stem, method, or prediction source. |
+| **Two annotation modes** | Analyze prediction masks against GT, or generate annotations from GT masks alone. |
+| **Error analysis** | Identify matched detections, false alarms, and missed targets through component matching. |
+| **Figure generation** | Export publication-oriented PNG figures with local zoom panels. |
+| **Multiple export formats** | Produce COCO JSON, YOLO TXT, and summary CSV files. |
+| **Configurable visualization** | Adjust thresholds, matching strategies, colors, resampling, brightness, and contrast. |
+
+Prediction analysis uses three categories:
+
+| Category | Meaning | Default box color |
+| :---: | --- | --- |
+| **A** | Matched detection (true positive) | Red |
+| **B** | Unmatched prediction (false alarm) | Gold |
+| **C** | Unmatched ground-truth target (miss) | Deep sky blue |
 
 ## Installation
 
@@ -40,13 +76,24 @@ git clone https://github.com/iLearn-Lab/IRSTD-AutoLabel.git
 cd IRSTD-AutoLabel
 
 python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
 ```
 
-Check the command:
+Activate the environment:
 
 ```bash
+# Linux / macOS
+source .venv/bin/activate
+```
+
+```powershell
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+```
+
+Install the dependencies and verify the CLI:
+
+```bash
+python -m pip install -r requirements.txt
 python -m cli --help
 ```
 
@@ -86,11 +133,15 @@ See the detailed CLI guide in [English](cli/README_EN.md) or [简体中文](cli/
 
 ## Usage
 
-Process all prediction sources:
+### Batch annotation
+
+Process all prediction sources and export PNG, COCO, YOLO, and CSV results:
 
 ```bash
-python -m cli --input /path/to/data
+python -m cli --input /path/to/data --format all
 ```
+
+### Select a source or method
 
 Process a single source or method:
 
@@ -99,13 +150,17 @@ python -m cli --input /path/to/data --source Method_A
 python -m cli --input /path/to/data --model Method_A
 ```
 
-Generate GT-only annotations:
+### GT-only annotation
+
+Generate annotations from original images and GT masks without prediction masks:
 
 ```bash
 python -m cli --input /path/to/data --mode original --format png,csv
 ```
 
-Tune matching and visualization:
+### Customize matching and visualization
+
+Tune the matching threshold, strategy, and category colors:
 
 ```bash
 python -m cli --input /path/to/data \
@@ -139,7 +194,13 @@ COCO and YOLO exports contain positive target boxes. In prediction mode these ar
 
 ```text
 IRSTD-AutoLabel/
+├── assets/                 # Manual and automatic annotation demo videos
+│   ├── humanlabel.mp4
+│   └── autolable.mp4
 ├── cli/                    # Open-source command-line implementation
+│   ├── README_EN.md         # Detailed English CLI guide
+│   └── README.md            # Detailed Chinese CLI guide
+├── CITATION.cff.template    # Software citation template
 ├── README.md
 ├── requirements.txt
 └── LICENSE
@@ -156,6 +217,9 @@ If you use IRSTD-AutoLabel, please cite the associated papers:
 - [DGNet](https://github.com/iLearn-Lab/MM26-DGNet)
 - [ADGNet](https://github.com/iLearn-Lab/MM26-ADGNet)
 - [HDNet](https://github.com/iLearn-Lab/TGRS25-HDNet)
+
+<details>
+<summary><strong>BibTeX citations</strong></summary>
 
 ```bibtex
 @inproceedings{yu2026dgnet,
@@ -182,6 +246,8 @@ If you use IRSTD-AutoLabel, please cite the associated papers:
   doi     = {10.1109/TGRS.2025.3574962},
 }
 ```
+
+</details>
 
 For future papers that use the tool, we recommend mentioning both the repository and the hosted web service in the main text or implementation section, rather than only in a footnote. Once an archival DOI is available, cite the software DOI as well.
 
